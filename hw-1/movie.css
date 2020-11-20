@@ -12,3 +12,23 @@ h1 {
   font-family: georgia;
   text-shadow: 3px 3px #999999;
 }
+
+#sadrzaj {
+  width: 55%;
+  margin: auto;
+  background-color: #EEEEEE;
+  display: flex;
+}
+
+#w3c {
+  float: right;
+}
+
+footer {
+  background-color: #A2B964;
+  margin: auto;
+  width: 55%;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
