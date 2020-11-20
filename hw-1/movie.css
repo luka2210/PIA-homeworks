@@ -32,3 +32,15 @@ footer {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
+
+#slika-header {
+  background-image: url('images/rbg.png'); 
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#92 {
+  font-size: 48pt;
+  color: red;
+  font-weight: bold;
+}
