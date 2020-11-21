@@ -54,7 +54,7 @@ footer {
   border: 2px solid #CCCCCC;
   border-radius: 12pt;
   padding: 0.5em;
-  margin: 0.5em;
+  margin-bottom: 0em;
 }
 
 #leva-kolona > p {
@@ -62,16 +62,15 @@ footer {
   width: 90%;
   margin: auto;
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .publication {
   font-style: italic;
 }
 
-#leva-kolona > img {
+img {
   vertical-align: top;
-  padding-right: 5px;
 }
 
 dd, dt, dl{
