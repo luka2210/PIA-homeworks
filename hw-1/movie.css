@@ -39,8 +39,37 @@ footer {
   margin-bottom: 1rem;
 }
 
-#92 {
-  font-size: 48pt;
-  color: red;
-  font-weight: bold;
+#leva-kolona {
+  display: flex;
+  flex-direction: column;
+}
+
+.quotebubble {
+  font-family: georgia;
+  font-size: 13pt;
+  position: relative;
+  width:90%;
+  margin: auto;
+  background-color: #FFFFFF;
+  border: 2px solid #CCCCCC;
+  border-radius: 12pt;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+#leva-kolona > p {
+  font-size: 13pt;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.publication {
+  font-style: italic;
+}
+
+img {
+  vertical-align: top;
+  padding-right: 5px;
 }
