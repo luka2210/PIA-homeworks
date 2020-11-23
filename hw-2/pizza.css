@@ -1,9 +1,9 @@
 body {
-	background-color: #BEBEBE;
+	background-image: url('slike/bck2.png');
 }	
 
 h1 {
-	font-family: arial;
+	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 	margin-top: 1em;
 	font-size: 50pt;
 	text-align: center;
@@ -24,8 +24,8 @@ h1 {
 
 .dugme {
 	position: relative;
-	width: 300px;
-	height: 300px;
+	width: 18vw;
+	height: 18vw;
     background-size: cover;
     background-position: center;
     margin: 20px 35px;
