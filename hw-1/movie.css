@@ -16,11 +16,14 @@ h1 {
   text-shadow: 3px 3px #999999;
 }
 
-#sadrzaj {
+#box {
   position: relative;
-  width: 55%;
   margin: auto;
+  width: 55%;
   box-shadow: 5px 5px 5px #999999;
+}
+
+#sadrzaj {
   display: flex;
 }
 
@@ -106,10 +109,7 @@ ul {
 
 footer {
   background-color: #A2B964;
-  margin: auto;
-  width: 55%;
   text-align: center;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  box-shadow: 5px 5px 5px #999999;
 }
