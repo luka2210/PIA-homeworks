@@ -51,19 +51,19 @@ h1 {
   font-size: 13pt;
   position: relative;
   margin: auto;
-  width:90%;
+  width: 90%;
   background-color: #FFFFFF;
   border: 2px solid #CCCCCC;
   border-radius: 12pt;
-  padding: 0.5em;
+  padding: 1em;
   margin-bottom: 0.5em;
 }
 
 .kriticar {
   font-size: 13pt;
-  width: 90%;
   margin: auto;
   position: relative;
+  width: 90%;
   margin-bottom: 2em;
 }
 
