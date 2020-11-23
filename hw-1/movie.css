@@ -17,30 +17,17 @@ h1 {
 }
 
 #sadrzaj {
+  position: relative;
   width: 55%;
   margin: auto;
-  background-color: #EEEEEE;
   box-shadow: 5px 5px 5px #999999;
   display: flex;
 }
 
-#w3c {
-  float: right;
-}
-
-footer {
-  background-color: #A2B964;
-  margin: auto;
-  width: 55%;
-  text-align: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
 #leva-kolona {
-  display: flex;
-  flex-direction: column;
-  width: 75%
+  background-color: #EEEEEE;
+  position: relative;
+  width: 70%
 }
 
 #slika-header {
@@ -66,7 +53,7 @@ footer {
   border: 2px solid #CCCCCC;
   border-radius: 12pt;
   padding: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .kriticar {
@@ -82,28 +69,33 @@ footer {
 }
 
 img {
-    margin-right: 5px;
-    float: left;      
+  margin-right: 5px;
+  float: left;      
 }
 
-dd, dt, dl{
-  width: 300px;
+#desna-kolona {
+  background-color:#A2B964;
+  position: relative;
+  width: 30%;
+}
+
+dl, dd, dt {
+  padding-left: 15px;
+  padding-right: 5px;
   font-size: 12pt;
   font-family: arial;
-  margin-left: 15px;
 }
 
-dd {
-  margin-bottom: 20px;
-  margin-left: 30px;
+#w3c {
+  float: right;
 }
 
-dt {
-  font-weight: bold;
-}
-
-ul {
-  margin-left: 20px;
-  margin-top: 0px;
-  padding: 0px;
+footer {
+  background-color: #A2B964;
+  margin: auto;
+  width: 55%;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  box-shadow: 5px 5px 5px #999999;
 }
