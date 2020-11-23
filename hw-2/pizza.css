@@ -1,12 +1,16 @@
-.lido {
-	font-size: 24pt;
-	font-weight: bold;
-	color: white;
-}
+body {
+	background-color: gray;
+}	
 
-.cont1 {
-	display: flex;
-	font-size: 16pt;
-	color: white;
+#onama {
+	font-family: georgia;
+	font-size: 13pt;
+	position: relative;
+	margin: auto;
+	width: 90%;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 12pt;
+	padding: 1em;
+	margin-bottom: 0.5em;
 }
-	
