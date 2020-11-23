@@ -80,10 +80,24 @@ img {
 }
 
 dl, dd, dt {
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 5px;
   font-size: 12pt;
   font-family: arial;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd, dl {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 #w3c {
