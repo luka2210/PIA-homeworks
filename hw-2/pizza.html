@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="pizza.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -18,19 +20,322 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#onama">O nama</a></li>
-				<li><a href="#">Meni</a></li>
+				<li><a href="#meni">Meni</a></li>
 				<li><a href="#">Kontakt</a></li>
 			</ul>
 		</div>
 </nav>
-	<br> <br> <br> <h1> O nama </h1>
-	<div id="onama"> Lido Pizza postala je nezaobilazno odredište svih ljubitelja italijanske pice. Trudimo se da uvek ponudimo nešto 
+	<h1 id="onama"> O nama </h1>
+	<div id="tekst"> Lido Pizza postala je nezaobilazno odredište svih ljubitelja italijanske pice. Trudimo se da uvek ponudimo nešto 
 	drugačije, a naš bogati gastronomski meni sačinjen se od najsvežijih brižno odabranih namirnica. Naše pice hrskave i 
 	bogatog nadeva oboriće s nogu kako najmlađe tako i najstarije generacije, a veličine su prilagođene i prilikama u kojima 
 	želite da uživate u ovom popularnom jelu. Pored pice, tu su i mini peciva za sva vaša koktel druženja, sendviči, slatke 
 	i slane palačinke i osvežavajući napici. Svakodnevno vršimo dostavu hrane na vašu kućnu adresu, svaku naručenu picu 
 	dostavljamo do vašeg kućnog praga u najkraćem roku a vaše je samo da izaberete onu pravu. Brzo, ukusno, hrskavo i povoljno, 
 	naručite odmah dostavu pice i uživajte!
+	</div>
+	
+	<h1 id="meni">Meni</h1>
+	<div class="row">
+		<div class="col-md-2"> </div>
+        <div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal1" id="prva" style="background-image: url(slike/kapricoza.jpg)"> </div>
+        <div class="modal fade" id="Modal1">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Kaprićoza</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Šunka</li>
+                            <li>Pečurke</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 200din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 590din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 990din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal2" id="druga" style="background-image: url(slike/kvatros.jpg)"></div>
+        <div class="modal fade" id="Modal2">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Quattro Stagione</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Šunka</li>
+                            <li>Pečurke</li>
+                            <li>Jaja</li>
+                            <li>Pečenica</li>
+                            <li>Pavlaka</li>
+                            <li>Origano</li>
+                            <li>Feferone</li>
+                            <li>Masline</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 250din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 650din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 1190din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal3" id="treca" style="background-image: url(slike/kvatrof.jpg)"></div>
+        <div class="modal fade" id="Modal3">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Quattro Formaggi</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Gorgonzola</li>
+                            <li>Parmezan</li>
+                            <li>Rikota</li>
+                            <li>Origano</li>
+                            <li>Masline</li>
+                            <li>Kulen</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 450din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 850din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 1290din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-2"> </div>
+        <div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal4" id="cetvrta" style="background-image: url(slike/srbijana.jpg)"> </div>
+        <div class="modal fade" id="Modal4">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Srbijana</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Šunka</li>
+                            <li>Slanina</li>
+                            <li>Pečenica</li>
+                            <li>Jaja</li>
+                            <li>Pavlaka</li>
+                            <li>Feferone</li>
+                            <li>Origano</li>
+                            <li>Masline</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 280din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 750din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 1190din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal5" id="peta" style="background-image: url(slike/vegatarijana.jpg)"></div>
+        <div class="modal fade" id="Modal5">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Vegetarijana</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Pečurke</li>
+                            <li>Crveni luk</li>
+                            <li>Kukuruz</li>
+                            <li>Paradajz</li>
+                            <li>Masline</li>
+                            <li>Feferone</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 250din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 650din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 1190din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div type="button" class="col-md-2 btn btn-primary btn-lg dugme" data-toggle="modal" data-target="#Modal6" id="sesta" style="background-image: url(slike/margarita.jpg)"></div>
+        <div class="modal fade" id="Modal6">
+            <div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pica Margherita</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>Sastojci:</div>
+                        <ul>
+                            <li>Pelat</li>
+                            <li>Kačkavalj</li>
+                            <li>Origano</li>
+                            <li>Masline</li>
+                        </ul>
+						
+						<div> Veličina: </div>
+						<div class="opcije"> 
+							<input type="radio" name="velicina">
+							<p class="label1">22cm, cena: 180din </p>
+							<input type="radio" name="velicina">   
+							<p class="label1">33cm, cena: 490din</p>                        
+							<input type="radio" name="velicina">
+							<p class="label1">50cm, cena: 790din</p>
+							</div>
+						
+						<div> Prilozi: </div>
+						<div class="opcije"> 
+							<input type="checkbox", name="kecap">
+							<p class="label1">Kečap</p>
+							<input type="checkbox", name="majonez">
+							<p class="label1">Majonez</p>
+							<input type="checkbox", name="punjene korice">
+							<p class="label1">Punjene korice</p>
+						</div> 
+						<label>Količina:</label>
+                        <input type="text" name="kolicina">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a class="dugme" href="#">Naruci</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
 </body>
 
