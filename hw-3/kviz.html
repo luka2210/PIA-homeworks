@@ -1,15 +1,30 @@
 <html>
 	<head>
-		<title> vezbanje </title>	
+		<title> Квиз </title>
+		<meta name="author" content="Лука Момчиловић" />
+		<meta charset="utf-8" />	
 	</head>
 
 	<body> 
 		<h1> Квиз </h1>
-		<form id="forma1">
+		<form id="forma0">
 			<label for="ime">Име и презиме такмичара:</label>
 			<input type="text" id="ime" name="ime"> <br>
 			<h2> Правила квиза </h2>
 			<input type="button" id="pocni_kviz" value="Почни квиз">
+		</form>
+		<form id="forma1">
+			<div id="pitanje"> Текст питања </div> <br>
+			<div id="forma1_true"> 
+				<input type="button" id="odgovorA">
+				<input type="button" id="odgovorB">
+				<input type="button" id="odgovorC">
+				<input type="button" id="odgovorD">
+			</div>
+			<div id="forma1_false">
+				<label for="odgovor_tekst">Унесите ваш одговор овде:</label>
+				<input type="text" id="odgovor_tekst" name="odgovor_tekst">
+			</div>
 		</form>
 		<script src="kviz.js"> </script>
 	</body>
