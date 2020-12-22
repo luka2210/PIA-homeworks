@@ -1,0 +1,28 @@
+[
+	{
+		"pitanje" : 1,
+		"tekst" : "proba1",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "odg11", 
+		"odgovor2" : "odg12",
+		"odgovor3" : "odg13",
+		"odgovor4" : "odg14",
+		"tacan_odgovor" : 1
+	},
+	{
+		"pitanje" : 2,
+		"tekst" : "proba2",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "odg21", 
+		"odgovor2" : "odg22",
+		"odgovor3" : "odg23",
+		"odgovor4" : "odg24",
+		"tacan_odgovor" : 2
+	},
+	{
+		"pitanje" : 3,
+		"tekst" : "proba3",
+		"ponudjeni_odgovori" : false,
+		"tacan_odgovor" : "odgovor3"
+	}
+]
