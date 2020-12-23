@@ -24,5 +24,15 @@
 		"tekst" : "proba3",
 		"ponudjeni_odgovori" : false,
 		"tacan_odgovor" : "odgovor3"
+	}, 
+	{
+		"pitanje" : 4,
+		"tekst" : "proba4",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "odg41", 
+		"odgovor2" : "odg42",
+		"odgovor3" : "odg43",
+		"odgovor4" : "odg44",
+		"tacan_odgovor" : 4
 	}
 ]
