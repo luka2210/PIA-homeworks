@@ -1,6 +1,11 @@
 body {
+	background-color: rgb(105, 105, 241);
+}
+
+#dodatni_kontejner {
 	display: flex;
-	background-color: rgb(2, 2, 83);
+  	align-items: center;
+  	justify-content: center;
 }
 
 h2 {
@@ -11,24 +16,17 @@ h2 {
 }
 
 #tajmer {
-	display: flex;
-	position: relative;
-	float: right;
-	color: red;
+	text-align: right;
+	font-size: 50px;
 }
 
 #glavni_kontejner {
-	width: 50%;
-	padding: 0;
+	width: 1000px;
+	padding: 5px;
 	margin: auto;
 	background-color: white;
-	border: 5px solid black;
 	border-radius: 10px;
-}
-
-#pocni_kviz {
-	margin: auto;
-	display: flex;
+	box-shadow: 0 0 10px 2px;
 }
 
 .dugme_kontejner {
@@ -37,15 +35,32 @@ h2 {
 	align-items: center;
 }
 
-#ime_prezime_kontejner {
+.ime_prezime_kontejner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 5px;
 }
 
-.dugme {
-	width: 30%;
+.ponudjen_odgovor {
+	width: 40%;
 	margin-right: 20px;
+}
+
+.dugme {
+	height: 50px;
 	margin-bottom: 5px;
+	background-color: rgb(0,191,255);
+	border: 3px solid rgb(0, 128, 255);
+	border-radius: 10px;
+	color: white;
+	font-size: 20px;
+}
+
+.dugme:hover {
+	border-color: black;
+}
+
+.dugme:focus {
+	outline: none;
 }

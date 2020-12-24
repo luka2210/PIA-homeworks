@@ -8,25 +8,28 @@
 
 	<body> 
 		<div id="tajmer"> 20s </div>
+		<div id="dodatni_kontejner">
 		<div id="glavni_kontejner" >
 			<div id="forma0">
 				<h2> Правила квиза </h2>
-				<div id="ime_prezime_kontejner">
+				<div class="ime_prezime_kontejner">
 					<label for="ime">Име и презиме такмичара:</label>
 					<input type="text" id="ime" name="ime"> <br>
 				</div>
-				<input type="button" id="pocni_kviz" value="Почни квиз">
+				<div class="dugme_kontejner">
+					<input type="button" id="pocni_kviz" value="Почни квиз" class="dugme">
+				</div>
 			</div>
 			<div id="forma1">
 				<div id="pitanje"> Текст питања </div> <br>
 				<div id="odgovori_true"> 
 					<div class="dugme_kontejner">
-						<input type="button" id="odgovorA" class="dugme">
-						<input type="button" id="odgovorB" class="dugme"> 
+						<input type="button" id="odgovorA" class="dugme ponudjen_odgovor">
+						<input type="button" id="odgovorB" class="dugme ponudjen_odgovor"> 
 					</div>
 					<div class="dugme_kontejner">
-						<input type="button" id="odgovorC" class="dugme"> 
-						<input type="button" id="odgovorD" class="dugme">
+						<input type="button" id="odgovorC" class="dugme ponudjen_odgovor"> 
+						<input type="button" id="odgovorD" class="dugme ponudjen_odgovor">
 					</div>
 				</div>
 				<div id="odgovori_false">
@@ -35,6 +38,7 @@
 					<input type="button" id="potvrdi" value="Потврди">
 				</div>
 			</div>
+		</div>
 		</div>
 		<script src="kviz.js"> </script>
 	</body>
