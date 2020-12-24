@@ -7,7 +7,8 @@
 		"odgovor2" : "odg12",
 		"odgovor3" : "odg13",
 		"odgovor4" : "odg14",
-		"tacan_odgovor" : 1
+		"tacan_odgovor" : 1,
+		"dat_odgovor" : false
 	},
 	{
 		"pitanje" : 2,
@@ -17,13 +18,15 @@
 		"odgovor2" : "odg22",
 		"odgovor3" : "odg23",
 		"odgovor4" : "odg24",
-		"tacan_odgovor" : 2
+		"tacan_odgovor" : 2,
+		"dat_odgovor" : false
 	},
 	{
 		"pitanje" : 3,
 		"tekst" : "proba3",
 		"ponudjeni_odgovori" : false,
-		"tacan_odgovor" : "odgovor3"
+		"tacan_odgovor" : "odgovor3",
+		"dat_odgovor" : false
 	}, 
 	{
 		"pitanje" : 4,
@@ -33,6 +36,7 @@
 		"odgovor2" : "odg42",
 		"odgovor3" : "odg43",
 		"odgovor4" : "odg44",
-		"tacan_odgovor" : 4
+		"tacan_odgovor" : 4,
+		"dat_odgovor" : false
 	}
 ]

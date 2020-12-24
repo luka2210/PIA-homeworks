@@ -20,6 +20,8 @@ var tekst_pitanja = document.getElementById("pitanje");
 var dugme_potvrdi = document.getElementById("potvrdi");
 var odgovor_tekst = document.getElementById("odgovor_tekst");
 dugme_potvrdi.onclick = function() { pritisnuto_dugme(0); };
+var ukupno_vreme;
+var tajmer;
 
 fetch('kviz.json').then(function(response) {
 	return response.json();
@@ -34,6 +36,17 @@ pocni_kviz_dugme.onclick = function() {
 		fnc_true();
 	else 
 		fnc_false();
+	ukupno_vreme = new Date().getTime() + 20000;
+	tajmer = setInterval(function() {
+		var sad = new Date().getTime();
+		var preostalo_vreme = ukupno_vreme - sad;
+		var sekunde = Math.floor((preostalo_vreme % (1000 * 60)) / 1000);
+		document.getElementById("tajmer").innerHTML = sekunde + "s ";
+		if (sekunde < 1) {
+			document.getElementById("tajmer").innerHTML = "Истекло време!";
+			pritisnuto_dugme(-1);
+		}
+	}, 100);
 }
 
 function fnc_true() {
@@ -58,13 +71,19 @@ function pritisnuto_dugme(x) {
 		broj_bodova+=1;
 	}
 	if (rb_pitanja == 3) 
+	{
 		kraj_kviza();
+		return;
+	}
 	else if (pitanja[++rb_pitanja].ponudjeni_odgovori)
 		fnc_true();
 	else
 		fnc_false();
+	ukupno_vreme = new Date().getTime() + 20000;
 }
 
+
 function kraj_kviza() {
+	clearInterval(tajmer);
 	document.write(broj_bodova);
 }
