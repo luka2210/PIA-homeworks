@@ -20,6 +20,8 @@ var tekst_pitanja = document.getElementById("pitanje");
 var dugme_potvrdi = document.getElementById("potvrdi");
 var odgovor_tekst = document.getElementById("odgovor_tekst");
 dugme_potvrdi.onclick = function() { pritisnuto_dugme(0); };
+var div_tajmer = document.getElementById("tajmer");
+div_tajmer.style.display = "none";
 var ukupno_vreme;
 var tajmer;
 
@@ -47,6 +49,7 @@ pocni_kviz_dugme.onclick = function() {
 			pritisnuto_dugme(-1);
 		}
 	}, 100);
+	div_tajmer.style.display = "block";
 }
 
 function fnc_true() {
@@ -85,5 +88,6 @@ function pritisnuto_dugme(x) {
 
 function kraj_kviza() {
 	clearInterval(tajmer);
+	div_tajmer.style.display = "none";
 	document.write(broj_bodova);
 }
