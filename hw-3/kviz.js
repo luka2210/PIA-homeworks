@@ -186,14 +186,15 @@ function kraj_kviza() {
 	document.getElementById("takmicar").innerHTML = ime_unos.value;
 	document.getElementById("bodovi").innerHTML = broj_bodova;
 	document.getElementById("opet").onclick = function() {
-		forma_0.style.display = "block";
-		forma_1.style.display = "none";
-		forma_2.style.display = "none";
-		ime_unos.value = "";
-		rb_pitanja = 0;
-		broj_bodova = 0;
+		pocni_opet();
 	}
 }
 
 function pocni_opet() {
+	forma_0.style.display = "block";
+	forma_1.style.display = "none";
+	forma_2.style.display = "none";
+	ime_unos.value = "";
+	rb_pitanja = 0;
+	broj_bodova = 0;
 }
