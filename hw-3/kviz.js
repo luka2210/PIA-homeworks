@@ -26,9 +26,9 @@ var div_tajmer = document.getElementById("tajmer");
 div_tajmer.style.display = "none";
 var ukupno_vreme;
 var tajmer;
-var takmicari = new Object();
 var odustani = document.getElementById("dugme_odustani");
 var preskoci_pitanje = document.getElementById("dugme_preskoci");
+var takmicari = [];
 
 fetch('kviz.json').then(function(response) {
 	return response.json();
@@ -37,6 +37,8 @@ fetch('kviz.json').then(function(response) {
 })
 
 function tajmer_funkcija() {
+	if (forma_1.style.display == "none") 
+		clearInterval(tajmer);
 	var sad = new Date().getTime();
 	var preostalo_vreme = ukupno_vreme - sad;
 	var sekunde = Math.floor((preostalo_vreme % (1000 * 60)) / 1000);
@@ -48,6 +50,7 @@ function tajmer_funkcija() {
 }
 
 pocni_kviz_dugme.onclick = function() {
+	rb_pitanja = 0;
 	if (ime_unos.value == "") {
 		window.alert("Нисте унесли име!");
 		return;
@@ -178,13 +181,29 @@ preskoci_pitanje.onclick = function() {
 }
 
 function kraj_kviza() {
+	let takmicar = new Object();
+	takmicar.ime = ime_unos.value;
+	takmicar.bodovi = broj_bodova;
+	takmicari.push(takmicar);
+	takmicari.sort(compare);
+	if (takmicari.length > 10)
+		takmicari.pop();
 	vrati_boje();
 	clearInterval(tajmer);
 	div_tajmer.style.display = "none";
 	forma_1.style.display = "none";
 	forma_2.style.display = "block";
-	document.getElementById("takmicar").innerHTML = ime_unos.value;
-	document.getElementById("bodovi").innerHTML = broj_bodova;
+	document.getElementById("rezultat").innerHTML = "Освојени бодови:" + broj_bodova; 
+	let tabela = document.getElementById("takmicar");
+	let sadrzaj_tabele = "<table> <tr> <th> Такмичар </th> <th> Бодови </th> </tr>";
+	for (let i=0;i<takmicari.length;i++) { 
+		sadrzaj_tabele += "<tr>";
+		sadrzaj_tabele += "<td>" + takmicari[i].ime + "</td>";
+		sadrzaj_tabele += "<td>" + takmicari[i].bodovi; + "</td>";
+		sadrzaj_tabele += "</tr>";
+	}
+	sadrzaj_tabele += "</table>";
+	tabela.innerHTML = sadrzaj_tabele;
 	document.getElementById("opet").onclick = function() {
 		pocni_opet();
 	}
@@ -197,4 +216,16 @@ function pocni_opet() {
 	ime_unos.value = "";
 	rb_pitanja = 0;
 	broj_bodova = 0;
+}
+
+function compare(a, b) {
+	if (a.bodovi < b.bodovi)
+		return 1;
+	if (a.bodovi > b.bodovi)
+		return -1;
+	if (a.ime < b.ime)
+		return -1;
+	if (a.ime > b.ime)
+		return 1;
+	return 0;
 }

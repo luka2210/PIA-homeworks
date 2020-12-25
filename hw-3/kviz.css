@@ -83,3 +83,20 @@ odustani_preskoci_kontejner {
 	display: flex;
 	float: right;
 }
+
+table, td, th {
+	font-size: 25px;
+	border: 1px solid black;
+}
+
+#takmicar {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+#rezultat {
+	font-size: 25px;
+}
