@@ -8,7 +8,8 @@
 		"odgovor3" : "odg13",
 		"odgovor4" : "odg14",
 		"tacan_odgovor" : 1,
-		"dat_odgovor" : false
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
 	},
 	{
 		"pitanje" : 2,
@@ -19,14 +20,16 @@
 		"odgovor3" : "odg23",
 		"odgovor4" : "odg24",
 		"tacan_odgovor" : 2,
-		"dat_odgovor" : false
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
 	},
 	{
 		"pitanje" : 3,
 		"tekst" : "proba3",
 		"ponudjeni_odgovori" : false,
-		"tacan_odgovor" : "odgovor3",
-		"dat_odgovor" : false
+		"tacan_odgovor" : "одговор3",
+		"dat_odgovor" : false,
+		"broj_bodova" : 3
 	}, 
 	{
 		"pitanje" : 4,
@@ -37,6 +40,7 @@
 		"odgovor3" : "odg43",
 		"odgovor4" : "odg44",
 		"tacan_odgovor" : 4,
-		"dat_odgovor" : false
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
 	}
 ]

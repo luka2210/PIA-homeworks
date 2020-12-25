@@ -24,6 +24,7 @@ var div_tajmer = document.getElementById("tajmer");
 div_tajmer.style.display = "none";
 var ukupno_vreme;
 var tajmer;
+var takmicari = new Object();
 
 fetch('kviz.json').then(function(response) {
 	return response.json();
@@ -43,6 +44,10 @@ function tajmer_funkcija() {
 }
 
 pocni_kviz_dugme.onclick = function() {
+	if (ime_unos.value == "") {
+		window.alert("Нисте унесли име!");
+		return;
+	}	
 	forma_0.style.display = "none";
 	forma_1.style.display = "block";
 	if (pitanja[0].ponudjeni_odgovori)
@@ -73,7 +78,7 @@ function fnc_false() {
 function pritisnuto_dugme(x) {
 	clearInterval(tajmer);
 	if ( (pitanja[rb_pitanja].ponudjeni_odgovori && x==pitanja[rb_pitanja].tacan_odgovor)
-	  || (!pitanja[rb_pitanja].ponudjeni_odgovori && odgovor_tekst.value==pitanja[rb_pitanja].tacan_odgovor) ) 
+	  || (x!=-1 && !pitanja[rb_pitanja].ponudjeni_odgovori && odgovor_tekst.value.toLowerCase()==pitanja[rb_pitanja].tacan_odgovor))
 		tacan_odgovor();
 	else 
 		netacan_odgovor();
@@ -81,12 +86,13 @@ function pritisnuto_dugme(x) {
 
 function tacan_odgovor() {
 	document.body.style.backgroundColor = "green";
-	broj_bodova+=1;
+	broj_bodova += pitanja[rb_pitanja].broj_bodova;
 	promeni_boje();
 }
 
 function netacan_odgovor() {
 	document.body.style.backgroundColor = "red";
+	odgovor_tekst.value = pitanja[rb_pitanja].tacan_odgovor;
 	promeni_boje();
 }
 
@@ -132,6 +138,7 @@ function promeni_boje() {
 		dugme3.style.backgroundColor = "rgb(0,191,255)";
 		dugme4.style.backgroundColor = "rgb(0,191,255)";
 		document.body.style.backgroundColor = "rgb(105, 105, 241)";
+		odgovor_tekst.value = "";
 		sledece_pitanje();
 	}, 2000);
 }
