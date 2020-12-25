@@ -100,7 +100,6 @@ function promeni_boje() {
 	dugme2.style.borderColor = "black";
 	dugme3.style.borderColor = "black";
 	dugme4.style.borderColor = "black";
-	dugme_potvrdi.style.borderColor = "black";
 	if (pitanja[rb_pitanja].tacan_odgovor == 1)
 		dugme1.style.backgroundColor = "green";
 	else 
@@ -127,6 +126,7 @@ function promeni_boje() {
 		dugme2.style.borderColor = "rgb(0, 128, 255)";
 		dugme3.style.borderColor = "rgb(0, 128, 255)";
 		dugme4.style.borderColor = "rgb(0, 128, 255)";
+		dugme_potvrdi.style.borderColor = "rgb(0, 128, 255)";
 		dugme1.style.backgroundColor = "rgb(0,191,255)";
 		dugme2.style.backgroundColor = "rgb(0,191,255)";
 		dugme3.style.backgroundColor = "rgb(0,191,255)";
