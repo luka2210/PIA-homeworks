@@ -156,7 +156,7 @@ function vrati_boje() {
 }
 
 function sledece_pitanje() {
-	if (rb_pitanja == 3) 
+	if (rb_pitanja == 9) 
 	{
 		kraj_kviza();
 		return;

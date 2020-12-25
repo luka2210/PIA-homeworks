@@ -54,5 +54,57 @@
 		"tacan_odgovor" : 4,
 		"dat_odgovor" : false,
 		"broj_bodova" : 1
+	},
+	{
+		"pitanje" : 6,
+		"tekst" : "Рођени брат Николе Симића, такође глумац, звао се: ",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "Славко", 
+		"odgovor2" : "Зоран",
+		"odgovor3" : "Ненад",
+		"odgovor4" : "Душко",
+		"tacan_odgovor" : 1,
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
+	},
+	{
+		"pitanje" : 7,
+		"tekst" : "На којој планини се налази Панчићев врх?",
+		"ponudjeni_odgovori" : false,
+		"tacan_odgovor" : "копаоник",
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
+	},
+	{
+		"pitanje" : 8,
+		"tekst" : "У Византијском царству календарска година је почињала ког месеца?",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "Марта", 
+		"odgovor2" : "Септембра",
+		"odgovor3" : "Јануара",
+		"odgovor4" : "Јуна",
+		"tacan_odgovor" : 2,
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
+	},
+	{
+		"pitanje" : 9,
+		"tekst" : "Који је главни град Аустралије?",
+		"ponudjeni_odgovori" : false,
+		"tacan_odgovor" : "канбера",
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
+	},
+	{
+		"pitanje" : 10,
+		"tekst" : "Буњевци су по вероисповести углавном:",
+		"ponudjeni_odgovori" : true,
+		"odgovor1" : "Муслимани", 
+		"odgovor2" : "Протестанти",
+		"odgovor3" : "Католици",
+		"odgovor4" : "Православци",
+		"tacan_odgovor" : 3,
+		"dat_odgovor" : false,
+		"broj_bodova" : 1
 	}
 ]
