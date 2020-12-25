@@ -31,6 +31,17 @@ fetch('kviz.json').then(function(response) {
 	pitanja = obj;
 })
 
+function tajmer_funkcija() {
+	var sad = new Date().getTime();
+	var preostalo_vreme = ukupno_vreme - sad;
+	var sekunde = Math.floor((preostalo_vreme % (1000 * 60)) / 1000);
+	document.getElementById("tajmer").innerHTML = sekunde + "s ";
+	if (sekunde < 1) {
+		document.getElementById("tajmer").innerHTML = "Истекло време!";
+		pritisnuto_dugme(-1);
+	}
+}
+
 pocni_kviz_dugme.onclick = function() {
 	forma_0.style.display = "none";
 	forma_1.style.display = "block";
@@ -38,17 +49,8 @@ pocni_kviz_dugme.onclick = function() {
 		fnc_true();
 	else 
 		fnc_false();
-	ukupno_vreme = new Date().getTime() + 20000;
-	tajmer = setInterval(function() {
-		var sad = new Date().getTime();
-		var preostalo_vreme = ukupno_vreme - sad;
-		var sekunde = Math.floor((preostalo_vreme % (1000 * 60)) / 1000);
-		document.getElementById("tajmer").innerHTML = sekunde + "s ";
-		if (sekunde < 1) {
-			document.getElementById("tajmer").innerHTML = "Истекло време!";
-			pritisnuto_dugme(-1);
-		}
-	}, 100);
+	ukupno_vreme = new Date().getTime() + 21000;
+	tajmer = setInterval(tajmer_funkcija, 100);
 	div_tajmer.style.display = "block";
 }
 
@@ -69,10 +71,72 @@ function fnc_false() {
 }
 
 function pritisnuto_dugme(x) {
+	clearInterval(tajmer);
 	if ( (pitanja[rb_pitanja].ponudjeni_odgovori && x==pitanja[rb_pitanja].tacan_odgovor)
-	  || (!pitanja[rb_pitanja].ponudjeni_odgovori && odgovor_tekst.value==pitanja[rb_pitanja].tacan_odgovor) ) {
-		broj_bodova+=1;
-	}
+	  || (!pitanja[rb_pitanja].ponudjeni_odgovori && odgovor_tekst.value==pitanja[rb_pitanja].tacan_odgovor) ) 
+		tacan_odgovor();
+	else 
+		netacan_odgovor();
+}
+
+function tacan_odgovor() {
+	document.body.style.backgroundColor = "green";
+	broj_bodova+=1;
+	promeni_boje();
+}
+
+function netacan_odgovor() {
+	document.body.style.backgroundColor = "red";
+	promeni_boje();
+}
+
+function promeni_boje() {
+	dugme1.disabled = true;
+	dugme2.disabled = true;
+	dugme3.disabled = true;
+	dugme4.disabled = true;
+	dugme1.style.borderColor = "black";
+	dugme2.style.borderColor = "black";
+	dugme3.style.borderColor = "black";
+	dugme4.style.borderColor = "black";
+	dugme_potvrdi.disabled = true;
+	if (pitanja[rb_pitanja].tacan_odgovor == 1)
+		dugme1.style.backgroundColor = "green";
+	else 
+		dugme1.style.backgroundColor = "red";
+	if (pitanja[rb_pitanja].tacan_odgovor == 2)
+		dugme2.style.backgroundColor = "green";
+	else 
+		dugme2.style.backgroundColor = "red";
+	if (pitanja[rb_pitanja].tacan_odgovor == 3)
+		dugme3.style.backgroundColor = "green";
+	else 
+		dugme3.style.backgroundColor = "red";
+	if (pitanja[rb_pitanja].tacan_odgovor == 4)
+		dugme4.style.backgroundColor = "green";
+	else 
+		dugme4.style.backgroundColor = "red";
+	var cekaj = setTimeout(function() {
+		dugme1.disabled = false;
+		dugme2.disabled = false;
+		dugme3.disabled = false;
+		dugme4.disabled = false;
+		dugme_potvrdi.disabled = false;
+		dugme1.style.borderColor = "rgb(0, 128, 255)";
+		dugme2.style.borderColor = "rgb(0, 128, 255)";
+		dugme3.style.borderColor = "rgb(0, 128, 255)";
+		dugme4.style.borderColor = "rgb(0, 128, 255)";
+		dugme1.style.backgroundColor = "rgb(0,191,255)";
+		dugme2.style.backgroundColor = "rgb(0,191,255)";
+		dugme3.style.backgroundColor = "rgb(0,191,255)";
+		dugme4.style.backgroundColor = "rgb(0,191,255)";
+		document.body.style.backgroundColor = "rgb(105, 105, 241)";
+		sledece_pitanje();
+	}, 1000);
+}
+
+function sledece_pitanje() {
+	tajmer = setInterval(tajmer_funkcija, 100);
 	if (rb_pitanja == 3) 
 	{
 		kraj_kviza();
@@ -84,7 +148,6 @@ function pritisnuto_dugme(x) {
 		fnc_false();
 	ukupno_vreme = new Date().getTime() + 20000;
 }
-
 
 function kraj_kviza() {
 	clearInterval(tajmer);
