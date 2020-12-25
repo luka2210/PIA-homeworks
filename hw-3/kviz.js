@@ -35,7 +35,7 @@ function tajmer_funkcija() {
 	var sad = new Date().getTime();
 	var preostalo_vreme = ukupno_vreme - sad;
 	var sekunde = Math.floor((preostalo_vreme % (1000 * 60)) / 1000);
-	document.getElementById("tajmer").innerHTML = sekunde + "s ";
+	document.getElementById("tajmer").innerHTML = sekunde;
 	if (sekunde < 1) {
 		document.getElementById("tajmer").innerHTML = "Истекло време!";
 		pritisnuto_dugme(-1);
@@ -95,11 +95,12 @@ function promeni_boje() {
 	dugme2.disabled = true;
 	dugme3.disabled = true;
 	dugme4.disabled = true;
+	dugme_potvrdi.disabled = true;
 	dugme1.style.borderColor = "black";
 	dugme2.style.borderColor = "black";
 	dugme3.style.borderColor = "black";
 	dugme4.style.borderColor = "black";
-	dugme_potvrdi.disabled = true;
+	dugme_potvrdi.style.borderColor = "black";
 	if (pitanja[rb_pitanja].tacan_odgovor == 1)
 		dugme1.style.backgroundColor = "green";
 	else 
@@ -132,7 +133,7 @@ function promeni_boje() {
 		dugme4.style.backgroundColor = "rgb(0,191,255)";
 		document.body.style.backgroundColor = "rgb(105, 105, 241)";
 		sledece_pitanje();
-	}, 1000);
+	}, 2000);
 }
 
 function sledece_pitanje() {
@@ -146,7 +147,7 @@ function sledece_pitanje() {
 		fnc_true();
 	else
 		fnc_false();
-	ukupno_vreme = new Date().getTime() + 20000;
+	ukupno_vreme = new Date().getTime() + 21000;
 }
 
 function kraj_kviza() {

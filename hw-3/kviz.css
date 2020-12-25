@@ -62,9 +62,6 @@ h2 {
 	font-size: 20px;
 }
 
-.dugme:hover {
-	border-color: black;
-}
 
 .dugme:focus {
 	outline: none;
