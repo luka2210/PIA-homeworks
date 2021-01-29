@@ -1,6 +1,4 @@
 <?php
-	echo "radireg";
-	
 	if (isset($_POST['posalji'])) {
 		$korisnicko_ime = $_POST['korisnicko_ime'];
 		$lozinka = $_POST['lozinka'];
@@ -20,15 +18,32 @@
 			exit();
 		}
 
-		if (korisnicko_ime_postoji($conn, $korisnicko_ime)) {
+		if (duzina($lozinka, 5, 30) !== false) {
+			header("location: login-registracija.php?error=lozinka_invalid");
+			exit();
+		}
+
+		if (duzina($ime, 2, 100) !== false) {
+			header("location: login-registracija.php?error=ime_invalid");
+			exit();
+		}
+
+		if (duzina($prezime, 2, 100) !== false) {
+			header("location: login-registracija.php?error=prezime_invalid");
+			exit();
+		}
+
+		if (korisnicko_ime_postoji($conn, $korisnicko_ime) !== false) {
 			header("location: login-registracija.php?error=korisnicko_ime_postoji");
 			exit();
 		}
 
-		if (e_mail_postoji($conn, $e_mail)) {
+		if (e_mail_postoji($conn, $e_mail) !== false) {
 			header("location: login-registracija.php?error=e_mail_postoji");
 			exit();
 		}
+
+		dodaj_korisnika($conn, $korisnicko_ime, $lozinka, $ime, $prezime, $e_mail);
 	}
 	else {
 		header("location: login-registracija.php");
@@ -50,6 +65,12 @@
 		return false;
 	}
 
+	function duzina($arg, $min_len, $max_len) {
+		if (strlen($arg) < $min_len || strlen($arg) > $max_len) 
+			return true;
+		return false;
+	}
+
 	function korisnicko_ime_postoji($conn, $korisnicko_ime) {
 		$sql = "SELECT * FROM korisnici WHERE kor_ime = ?;";
 		$stmt = mysqli_stmt_init($conn);
@@ -64,7 +85,8 @@
 			return $var1;
 		else
 			return false;
-	}
+		mysqli_stmt_close($stmt);
+		}
 
 	function e_mail_postoji($conn, $e_mail) {
 		$sql = "SELECT * FROM korisnici WHERE e_mail = ?;";
@@ -80,4 +102,20 @@
 			return $var2;
 		else
 			return false;
+		mysqli_stmt_close($stmt);
+	}
+
+	function dodaj_korisnika($conn, $korisnicko_ime, $lozinka, $ime, $prezime, $e_mail) {
+		$sql = "INSERT INTO korisnici (kor_ime, lozinka, ime, prezime, e_mail, admin) VALUES (?, ?, ?, ?, ?, ?);";
+		$stmt = mysqli_stmt_init($conn);
+		if (!mysqli_stmt_prepare($stmt, $sql)) {
+			header("location: login-registracija.php?error=stmt1_fail");
+			exit();
+		}
+		$admin = 0;
+		mysqli_stmt_bind_param($stmt, "sssssi", $korisnicko_ime, $lozinka, $ime, $prezime, $e_mail, $admin);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+		header("location: login-registracija.php?error=none");
+		exit();
 	}
