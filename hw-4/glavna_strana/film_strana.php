@@ -7,6 +7,7 @@
     <body>
         <?php
             require_once "film_klasa.php";
+            require_once "../pocetna_strana/dbh.php";
             session_start();
             if (isset($_SESSION['id']) && (isset($_POST['izabrani_film']) || isset($_SESSION['film_id']))) {
                 $naslov_godina = explode(", ", $_POST['izabrani_film']);
@@ -30,11 +31,35 @@
                 }
 
                 $_SESSION['film_id'] = $izabrani_film->id;
+                $prosecna_ocena = pronadji_prosecnu_ocenu($conn, $_SESSION['film_id']);
+                echo $prosecna_ocena;
             }
             else {
                 header("location: ../pocetna_strana/login-registracija.php");
                 session_unset();
                 exit();
+            }
+
+            function pronadji_prosecnu_ocenu($conn, $film_id) {
+                $br=0;
+                $zbir=0;
+                $sql = "SELECT ocena FROM ocene WHERE film_id = ?;";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("location: login-registracija.php?error=stmt_fail");
+                    exit();
+                }
+                mysqli_stmt_bind_param($stmt, "i", $film_id);
+                mysqli_stmt_execute($stmt);
+                $podaci = mysqli_stmt_get_result($stmt);
+                while ($ocena = mysqli_fetch_assoc($podaci)) {
+                    $zbir+=(int)$ocena['ocena'];
+                    $br++;
+                }
+                if ($br === 0)
+                    return 0;
+                return ($zbir/$br);
+                mysqli_stmt_close($stmt);
             }
         ?>
 

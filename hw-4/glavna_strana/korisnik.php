@@ -167,9 +167,9 @@
         }
     ?>
 
-    <div id="greska"> <?php if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen.";
+    <div id="greska"> <?php if (isset($_GET['error'])) if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen.";
                             else if ($_GET['error'] === "nije_ocenjen") echo "Ocena nije zabeležena jer ste već ocenili film."; 
-                            else if ($_GET['error'] === "ocenjen") echo "Film je uspešno ocenjen."?> </div>
+                            else if ($_GET['error'] === "ocenjen") echo "Film je uspešno ocenjen." ?> </div>
 
     <script src="korisnik.js"> </script>
     </body>
