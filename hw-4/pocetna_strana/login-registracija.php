@@ -38,6 +38,10 @@
 					echo '<div id="greska"> Unetu e-mail adresu već koristi neki drugi nalog. </div>';
 				else if ($greska === 'stmt_fail')
 					echo '<div id="greska"> Dogodila se serverska greška, probajte ponovo. </div>';
+				else if ($greska === 'ne_postoji')
+					echo '<div id="greska"> Korisničko ime ili e-mail koji ste uneli ne pripada ni jednom nalogu. </div>';
+				else if ($greska === 'pogresna_lozinka')
+					echo '<div id="greska"> Pogrešna lozinka. </div>';
 			}
 		?>
 	</body>
