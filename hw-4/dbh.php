@@ -9,9 +9,6 @@ $conn =  mysqli_connect($server, $db_korisnik, $db_lozinka, $db_ime);
 if (!$conn) {
 	die("Connection failed: ". mysqli_connect_error());
 }
-else {
-	echo "\nradidhb";
-}
 
 /*
 *tabela korisnici*

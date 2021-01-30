@@ -109,7 +109,7 @@
 		$sql = "INSERT INTO korisnici (kor_ime, lozinka, ime, prezime, e_mail, admin) VALUES (?, ?, ?, ?, ?, ?);";
 		$stmt = mysqli_stmt_init($conn);
 		if (!mysqli_stmt_prepare($stmt, $sql)) {
-			header("location: login-registracija.php?error=stmt1_fail");
+			header("location: login-registracija.php?error=stmt_fail");
 			exit();
 		}
 		$admin = 0;
