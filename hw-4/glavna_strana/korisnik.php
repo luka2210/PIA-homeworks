@@ -147,6 +147,7 @@
                 array_push($podaci_assoc, $red);
             }
             return $podaci_assoc;
+            mysqli_stmt_close($stmt);
         }
 
         function ispisi_sve_filmove($filmovi) {
@@ -166,7 +167,9 @@
         }
     ?>
 
-    <div id="nije_pronadjen"> <?php if (isset($_GET['error'])) echo "Film nije pronadjen." ?> </div>
+    <div id="greska"> <?php if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen.";
+                            else if ($_GET['error'] === "nije_ocenjen") echo "Ocena nije zabeležena jer ste već ocenili film."; 
+                            else if ($_GET['error'] === "ocenjen") echo "Film je uspešno ocenjen."?> </div>
 
     <script src="korisnik.js"> </script>
     </body>

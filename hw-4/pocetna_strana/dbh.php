@@ -35,7 +35,4 @@ CREATE TABLE filmovi(
     slika varchar(100) NOT NULL,
     vreme_trajanja int(4) NOT NULL
 );
-INSERT INTO filmovi (naslov, kraci_opis, zanr, reziser, prod_kuca, glumci, god_izdanja, slika, vreme_trajanja) 
-VALUES ("", "", "", "", "", "", 0, "../slike/.png", 0);
-
 */
