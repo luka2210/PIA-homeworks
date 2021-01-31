@@ -7,6 +7,7 @@ zanrovi_kontejner = document.getElementById("zanrovi_kontejner");
 zanrovi_kontejner.style.display = "none";
 
 dugme_akcija = document.getElementById("dugme_akcija");
+dugme_akcija.class = "dugme3";
 dugme_animirani = document.getElementById("dugme_animirani");
 dugme_dokumentarni = document.getElementById("dugme_dokumentarni");
 dugme_drama = document.getElementById("dugme_drama");
@@ -14,6 +15,19 @@ dugme_fantazija = document.getElementById("dugme_fantazija");
 dugme_horor = document.getElementById("dugme_horor");
 dugme_komedija = document.getElementById("dugme_komedija");
 dugme_triler = document.getElementById("dugme_triler");
+medija = document.getElementById("komedija");
+triler = document.getElementById("triler");
+
+svi_filmovi_dugme.onclick = function() {
+    svi_filmovi_kontejner.style.display = "block";
+    zanrovi_kontejner.style.display = "none";
+}
+
+zanrovi_dugme.onclick = function() {
+    svi_filmovi_kontejner.style.display = "none";
+    zanrovi_kontejner.style.display = "block";
+    sakrij_zanrove();
+}
 
 akcija = document.getElementById("akcija");
 animirani = document.getElementById("animirani");
@@ -23,17 +37,6 @@ fantazija = document.getElementById("fantazija");
 horor = document.getElementById("horor");
 komedija = document.getElementById("komedija");
 triler = document.getElementById("triler");
-
-svi_filmovi_dugme.onclick = function() {
-    svi_filmovi_kontejner.style.display = "inline";
-    zanrovi_kontejner.style.display = "none";
-}
-
-zanrovi_dugme.onclick = function() {
-    svi_filmovi_kontejner.style.display = "none";
-    zanrovi_kontejner.style.display = "block";
-    sakrij_zanrove();
-}
 
 function sakrij_zanrove() {
     akcija.style.display = "none";

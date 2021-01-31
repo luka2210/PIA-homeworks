@@ -5,7 +5,7 @@ body {
 
 #osnovni_kontejner {
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     width: 70%;
     background-color: rgb(0, 25, 51);
     border-radius: 25px;
@@ -21,6 +21,7 @@ body {
     color: white;
     background-color: rgb(128, 128, 128);
     border: none;
+    margin-bottom: 20px;
 }
 
 #dugme1_kontejner {
@@ -40,4 +41,20 @@ body {
     margin-top: 20px;
     background-color: rgb(0, 153, 76);
     font-weight: bold;
+}
+
+.dugme3 {
+    height: 50px;
+    width: 148px;
+    font-size: 20pt;
+    color: white;
+    background-color: rgb(128, 128, 128);
+    border: none;
+    margin-bottom: 5px;
+}
+
+#greska {
+    font-size: 18pt;
+    color: white;
+    text-align: center;
 }

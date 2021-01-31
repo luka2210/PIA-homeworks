@@ -8,91 +8,91 @@
     <body>
     <?php require_once "header.php" ?>  
     
-    <div id="osnovni_kontejner">
-    
-    <div id="dugme1_kontejner">
-    <input type="button" class="dugme1" id="svi_filmovi_dugme" value="Svi filmovi"> 
-    <input type="button" class="dugme1" id="zanrovi_dugme" value="Izaberi žanr"> <br>
-    </div>  
+<div id="osnovni_kontejner">
+<div>
+<input type="button" class="dugme1" id="svi_filmovi_dugme" value="Svi filmovi"> 
+<input type="button" class="dugme1" id="zanrovi_dugme" value="Izaberi žanr"> <br> 
 
+<div id="svi_filmovi_kontejner">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi" name="izabrani_film" id="svi_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi"> <br>
+</form>
+</div>
 
+<div id="zanrovi_kontejner">
+<div id="dugmici">
+<input class="dugme3" type="button" value="Akcija" id="dugme_akcija">
+<input class="dugme3" type="button" value="Animirani" id="dugme_animirani">
+<input class="dugme3" type="button" value="Dokument." id="dugme_dokumentarni">
+<input class="dugme3" type="button" value="Drama" id="dugme_drama"> <br>
+<input class="dugme3" type="button" value="Fantazija" id="dugme_fantazija">
+<input class="dugme3" type="button" value="Horor" id="dugme_horor">
+<input class="dugme3" type="button" value="Komedija" id="dugme_komedija">
+<input class="dugme3" type="button" value="Triler" id="dugme_triler">
+</div>
 
-    <div id="svi_filmovi_kontejner">
-        <form action="film_strana.php" method="post">
-            <input list="filmovi" name="izabrani_film" id="svi_filmovi_lista">
-            <input type="submit" value="Potvrdi"> <br>
-        </form>
-    </div>
+<div id="akcija">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_akcija" name="izabrani_film" id="akcija_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-    <div id="zanrovi_kontejner">
-        <div id="dugmici">
-            <input type="button" value="Akcija" id="dugme_akcija">
-            <input type="button" value="Animirani" id="dugme_animirani">
-            <input type="button" value="Dokumentarni" id="dugme_dokumentarni">
-            <input type="button" value="Drama" id="dugme_drama">
-            <input type="button" value="Fantazija" id="dugme_fantazija">
-            <input type="button" value="Horor" id="dugme_horor">
-            <input type="button" value="Komedija" id="dugme_komedija">
-            <input type="button" value="Triler" id="dugme_triler">
-        </div>
+<div id="animirani">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_animirani" name="izabrani_film" id="animirani_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="akcija">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_akcija" name="izabrani_film" id="akcija_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
+<div id="dokumentarni">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_dokumentarni" name="izabrani_film" id="dokumentarni_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="animirani">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_animirani" name="izabrani_film" id="animirani_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
+<div id="drama">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_drama" name="izabrani_film" id="drama_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="dokumentarni">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_dokumentarni" name="izabrani_film" id="dokumentarni_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
+<div id="fantazija">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_fantazija" name="izabrani_film" id="fantazija_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="drama">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_drama" name="izabrani_film" id="drama_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
+<div id="horor">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_horor" name="izabrani_film" id="horor_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="fantazija">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_fantazija" name="izabrani_film" id="fantazija_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
+<div id="komedija">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_komedija" name="izabrani_film" id="komedija_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
 
-        <div id="horor">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_horor" name="izabrani_film" id="horor_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
-
-        <div id="komedija">
-        <form action="film_strana.php" method="post">
-        <input list="filmovi_komedija" name="izabrani_film" id="komedija_filmovi_lista">
-        <input type="submit" value="Potvrdi">
-        </form>
-        </div>
-
-        <div id="triler">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_triler" name="izabrani_film" id="triler_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
-        </div>
-    </div>
-    </div>
+<div id="triler">
+<form action="film_strana.php" method="post">
+<input class="textbox" list="filmovi_triler" name="izabrani_film" id="triler_filmovi_lista"> <br>
+<input class="dugme2" type="submit" value="Potvrdi">
+</form>
+</div>
+</div>
+<div id="greska"> <?php if (isset($_GET['error'])) if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen.";
+                            else if ($_GET['error'] === "nije_ocenjen") echo "Ocena nije zabeležena jer ste već ocenili film."; 
+                            else if ($_GET['error'] === "ocenjen") echo "Film je uspešno ocenjen." ?> </div>
+</div>
+</div>
 
     <?php 
         session_start();
@@ -170,10 +170,6 @@
             echo "</datalist>";
         }
     ?>
-
-    <div id="greska"> <?php if (isset($_GET['error'])) if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen.";
-                            else if ($_GET['error'] === "nije_ocenjen") echo "Ocena nije zabeležena jer ste već ocenili film."; 
-                            else if ($_GET['error'] === "ocenjen") echo "Film je uspešno ocenjen." ?> </div>
 
     <script src="korisnik.js"> </script>
     </body>
