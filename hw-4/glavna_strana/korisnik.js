@@ -25,7 +25,7 @@ komedija = document.getElementById("komedija");
 triler = document.getElementById("triler");
 
 svi_filmovi_dugme.onclick = function() {
-    svi_filmovi_kontejner.style.display = "block";
+    svi_filmovi_kontejner.style.display = "inline";
     zanrovi_kontejner.style.display = "none";
 }
 
