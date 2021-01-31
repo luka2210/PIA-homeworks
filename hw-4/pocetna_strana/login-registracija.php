@@ -2,22 +2,29 @@
 	<head>
 		<title> IMDB </title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="login-registracija.css">
 	</head>
 
 	<body>
+		<div id="osnovni_kontejner">
 		<form method="post" action="log.php" id="glavna_forma">
-			<input type="button" id="prijava" name="prijava" value="Prijava"> 
-			<input type="button" id="registracija" name="registracija" value="Registracija"> <br>
-			<input type="text" name="korisnicko_ime" id="korisnicko_ime" placeholder="Korisničko ime ili e-mail"> <br>
-			<input type="password" name="lozinka" id="lozinka" placeholder="Lozinka"> <br>
-			<div id="registracija_forma">
-				<input type="text" name="ime" id="ime" placeholder="Ime"> <br>
-				<input type="text" name="prezime" id="prezime" placeholder="Prezime"> <br>
-				<input type="text" name="e-mail" id="e-mail" placeholder="E-mail adresa"> <br>
+			<div id="dugme1_kontejner">
+			<input type="button" id="prijava" name="prijava" value="Prijava" class="dugme1"> 
+			<input type="button" id="registracija" name="registracija" value="Registracija" class="dugme1"> <br>
 			</div>
-			<input type="submit" value="Prijavite se" name="posalji" id="posalji"> 
+			<div id="forma_kontejner">
+			<input type="text" class="textbox" name="korisnicko_ime" id="korisnicko_ime" placeholder="Korisničko ime ili e-mail"> <br>
+			<input type="password" class="textbox" name="lozinka" id="lozinka" placeholder="Lozinka"> <br>
+			<div id="registracija_forma">
+				<input type="text" class="textbox" name="ime" id="ime" placeholder="Ime"> <br>
+				<input type="text" class="textbox" name="prezime" id="prezime" placeholder="Prezime"> <br>
+				<input type="text" class="textbox" name="e-mail" id="e-mail" placeholder="E-mail adresa"> <br>
+			</div>
+			</div>
+			<input type="submit" class="dugme2" value="Prijavite se" name="posalji" id="posalji"> 
 		</form>
 		<script src="logreg.js"> </script>
+		</div>
 
 		<?php 
 			if (isset($_GET['error'])) {

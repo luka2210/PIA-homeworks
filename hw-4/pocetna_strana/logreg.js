@@ -1,4 +1,5 @@
 dugme_reg = document.getElementById("registracija");
+dugme_reg.style.backgroundColor = "red";
 dugme_log = document.getElementById("prijava");
 forma_reg = document.getElementById("registracija_forma");
 forma_reg.style.display = "none";
@@ -7,6 +8,7 @@ kor_ime = document.getElementById("korisnicko_ime");
 glavna_forma = document.getElementById("glavna_forma");
 
 dugme_reg.onclick = function() {
+	dugme_reg.style.backgroundColor = "red";
 	forma_reg.style.display = "block";
 	dugme_posalji.value = "Registrujte se";
 	kor_ime.placeholder = "Korisničko ime";
