@@ -96,7 +96,7 @@
 
     <?php 
         session_start();
-        if (isset($_SESSION['id'])) {
+        if (isset($_SESSION['id']) && isset($_SESSION['admin'])) {
             if ($_SESSION['admin'] === 1) {
                 header("location: admin.php");
                 exit();

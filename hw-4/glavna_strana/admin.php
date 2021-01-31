@@ -9,7 +9,7 @@
     <input type="button" id="obrisi_izmeni_dugme" value="Izmeni/obriši film">
 
     <div id="obrisi_izmeni_kontejner">
-        <form action="" method="post">
+        <form action="obrisi_izmeni_film.php" method="post">
             <label for="svi_filmovi_lista"> Izaberite film: </label>
             <input list="filmovi" name="izabrani_film" id="svi_filmovi_lista"> <br>
             <label for="izmeni"> Izmeni: </label>
@@ -21,22 +21,23 @@
     </div>
 
     <div id="dodaj_kontejner">
-        <form action="" method="post">
-            <input type="text" id="naslov" placeholder="Naslov">
-            <input type="text" id="kraci_opis" placeholder="Kraći opis">
-            <input type="text" id="zanr" placeholder="Žanr">
-            <input type="text" id="reziser" placeholder="Režiser">
-            <input type="text" id="prod_kuca" placeholder="Producentska kuća">
-            <input type="text" id="glumci" placeholder="Glumci">
-            <input type="text" id="god_izdanja" placeholder="Godina izdanja">
-            <input type="text" id="slika" placeholder="Slika">
-            <input type="text" id="vreme_trajanja" placeholder="Vreme trajanja (u minutima)">
+        <form action="dodaj_film.php" method="post">
+            <input type="text" name="naslov" placeholder="Naslov"> <br>
+            <input type="text" name="kraci_opis" placeholder="Kraći opis"> <br>
+            <input type="text" name="zanr" placeholder="Žanr"> <br>
+            <input type="text" name="reziser" placeholder="Režiser"> <br>     
+            <input type="text" name="prod_kuca" placeholder="Producentska kuća"> <br>
+            <input type="text" name="glumci" placeholder="Glumci"> <br>
+            <input type="text" name="god_izdanja" placeholder="Godina izdanja"> <br>
+            <input type="text" name="slika" placeholder="Slika"> <br>
+            <input type="text" name="vreme_trajanja" placeholder="Vreme trajanja (u minutima)"> <br>
+            <input type="submit" id="posalji2" value="Potvrdi">
         </form>
     </div>
 
     <?php 
         session_start();
-        if (isset($_SESSION['id'])) {
+        if (isset($_SESSION['id']) && isset($_SESSION['admin'])) {
             if ($_SESSION['admin'] === 0) {
                 header("location: korisnik.php");
                 exit();

@@ -9,7 +9,7 @@
             require_once "film_klasa.php";
             require_once "../pocetna_strana/dbh.php";
             session_start();
-            if (isset($_SESSION['id']) && (isset($_POST['izabrani_film']) || isset($_SESSION['film_id']))) {
+            if (isset($_SESSION['id']) && isset($_SESSION['admin']) && (isset($_POST['izabrani_film']) || isset($_SESSION['film_id']))) {
                 if ($_SESSION['admin'] === 1) {
                     header("location: admin.php");
                     exit();
