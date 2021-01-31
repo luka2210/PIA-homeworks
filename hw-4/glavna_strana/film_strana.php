@@ -32,7 +32,7 @@
 
                 $_SESSION['film_id'] = $izabrani_film->id;
                 $prosecna_ocena = pronadji_prosecnu_ocenu($conn, $_SESSION['film_id']);
-                echo $prosecna_ocena;
+                //echo $prosecna_ocena;
             }
             else {
                 header("location: ../pocetna_strana/login-registracija.php");
@@ -57,7 +57,7 @@
                     $br++;
                 }
                 if ($br === 0)
-                    return 0;
+                    return "neocenjen";
                 return ($zbir/$br);
                 mysqli_stmt_close($stmt);
             }
@@ -78,6 +78,7 @@
         <div id="glumci"> <?php echo $izabrani_film->glumci ?> </div>
         <div id="god_izdanja"> <?php echo $izabrani_film->god_izdanja ?> </div>
         <div id="vreme_trajanja"> <?php echo $izabrani_film->vreme_trajanja ?> </div>
+        <div id="prosecna_ocena"> <?php echo $prosecna_ocena ?> </div>
 
         <div id="oceni_kontejner">
             <form action="oceni.php" method="post">
