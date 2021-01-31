@@ -1,39 +1,46 @@
 <html>
     <head>
-    <title> IMDB </title>
-		<meta charset="UTF-8">
-	</head>
+        <title> IMDB </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="admin.css">
+    </head>
 
     <body>
     <?php require_once "header.php" ?>    
-    <input type="button" id="dodaj_dugme" value="Dodaj film">
-    <input type="button" id="obrisi_izmeni_dugme" value="Izmeni/obriši film">
+
+    <div id="osnovni_kontejner">
+    <div>
+
+    <input class="dugme1" type="button" id="dodaj_dugme" value="Dodaj film">
+    <input class="dugme1" type="button" id="obrisi_izmeni_dugme" value="Izmeni/obriši film">
 
     <div id="obrisi_izmeni_kontejner">
         <form action="obrisi_izmeni_film.php" method="post">
-            <label for="svi_filmovi_lista"> Izaberite film: </label>
-            <input list="filmovi" name="izabrani_film" id="svi_filmovi_lista"> <br>
-            <label for="izmeni"> Izmeni: </label>
+            <input class="textbox" list="filmovi" name="izabrani_film" id="svi_filmovi_lista"> <br>
+            <label class="labela" for="izmeni"> Izmeni: </label>
             <input type="radio" name="akcija" value="izmeni" id="izmeni">
-            <label for="obrisi"> Obriši: </label>
+            <label class="labela" for="obrisi"> Obriši: </label>
             <input type="radio" name="akcija" value="obrisi" id="obrisi"> <br>
-            <input type="submit" value="Potvrdi" id="posalji"> 
+            <input class="dugme2" type="submit" value="Potvrdi" id="posalji"> 
         </form>
     </div>
 
     <div id="dodaj_kontejner">
         <form action="dodaj_film.php" method="post">
-            <input type="text" name="naslov" placeholder="Naslov"> <br>
-            <input type="text" name="kraci_opis" placeholder="Kraći opis"> <br>
-            <input type="text" name="zanr" placeholder="Žanr"> <br>
-            <input type="text" name="reziser" placeholder="Režiser"> <br>     
-            <input type="text" name="prod_kuca" placeholder="Producentska kuća"> <br>
-            <input type="text" name="glumci" placeholder="Glumci"> <br>
-            <input type="text" name="god_izdanja" placeholder="Godina izdanja"> <br>
-            <input type="text" name="slika" placeholder="Slika"> <br>
-            <input type="text" name="vreme_trajanja" placeholder="Vreme trajanja (u minutima)"> <br>
-            <input type="submit" id="posalji2" value="Potvrdi">
+            <input class="textbox" type="text" name="naslov" placeholder="Naslov"> <br>
+            <input class="textbox" type="text" name="kraci_opis" placeholder="Kraći opis"> <br>
+            <input class="textbox" type="text" name="zanr" placeholder="Žanr"> <br>
+            <input class="textbox" type="text" name="reziser" placeholder="Režiser"> <br>     
+            <input class="textbox" type="text" name="prod_kuca" placeholder="Producentska kuća"> <br>
+            <input class="textbox" type="text" name="glumci" placeholder="Glumci"> <br>
+            <input class="textbox" type="text" name="god_izdanja" placeholder="Godina izdanja"> <br>
+            <input class="textbox" type="text" name="slika" placeholder="Slika"> <br>
+            <input class="textbox" type="text" name="vreme_trajanja" placeholder="Vreme trajanja (u minutima)"> <br>
+            <input class="dugme2" type="submit" id="posalji2" value="Potvrdi">
         </form>
+    </div>
+    <div id="greska"> <?php if (isset($_GET['error'])) if ($_GET['error'] === "nije_pronadjen") echo "Film nije pronadjen."; ?> </div>
+    </div>
     </div>
 
     <?php 

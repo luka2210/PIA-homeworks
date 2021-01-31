@@ -1,0 +1,17 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+.bubble {
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 20pt;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+}

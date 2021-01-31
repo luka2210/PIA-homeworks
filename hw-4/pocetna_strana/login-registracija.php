@@ -7,6 +7,7 @@
 
 	<body>
 		<div id="osnovni_kontejner">
+		<div>
 		<form method="post" action="log.php" id="glavna_forma">
 			<div id="dugme1_kontejner">
 			<input type="button" id="prijava" name="prijava" value="Prijava" class="dugme1"> 
@@ -23,33 +24,34 @@
 			
 			<input type="submit" class="dugme2" value="Prijavite se" name="posalji" id="posalji"> 
 		</form>
+		<div id="greska"> <?php 
+								if (isset($_GET['error'])) {
+									$greska = $_GET['error'];
+									if ($greska === 'korisnicko_ime_invalid') 
+										echo 'Korisničko ime mora imati izmedju 5 i 25 karaktera i sme sadržati samo brojeve i slova engleskog alfabeta.';
+									else if ($greska === 'lozinka_invalid') 
+										echo 'Unesite lozinku koja ima izmedju 5 i 30 karaktera (dozvoljeni su svi karakteri).';
+									else if ($greska === 'ime_invalid') 
+										echo 'Niste uneli ime!';
+									else if ($greska === 'prezime_invalid') 
+										echo 'Niste uneli prezime!';
+									else if ($greska === 'e_mail_invalid') 
+										echo 'Niste uneli e-mail u odgovarajućem formatu.';
+									else if ($greska === 'korisnicko_ime_postoji')
+										echo 'Korisničko ime koje ste uneli već postoji.';
+									else if ($greska === 'e_mail_postoji')
+										echo 'Unetu e-mail adresu već koristi neki drugi nalog.';
+									else if ($greska === 'stmt_fail')
+										echo 'Dogodila se serverska greška, probajte ponovo.';
+									else if ($greska === 'ne_postoji')
+										echo 'Korisničko ime ili e-mail koji ste uneli ne pripada ni jednom nalogu.';
+									else if ($greska === 'pogresna_lozinka')
+										echo 'Pogrešna lozinka.';
+								}
+						   ?> 
+		</div>
+		</div>
 		<script src="logreg.js"> </script>
 		</div>
-
-		<?php 
-			if (isset($_GET['error'])) {
-				$greska = $_GET['error'];
-				if ($greska === 'korisnicko_ime_invalid') 
-					echo '<div id="greska"> Korisničko ime mora imati izmedju 5 i 25 karaktera i sme sadržati samo brojeve i slova engleskog alfabeta. </div>';
-				else if ($greska === 'lozinka_invalid') 
-					echo '<div id="greska"> Unesite lozinku koja ima izmedju 5 i 30 karaktera (dozvoljeni su svi karakteri). </div>';
-				else if ($greska === 'ime_invalid') 
-					echo '<div id="greska"> Niste uneli ime! </div>';
-				else if ($greska === 'prezime_invalid') 
-					echo '<div id="greska"> Niste uneli prezime! </div>';
-				else if ($greska === 'e_mail_invalid') 
-					echo '<div id="greska"> Niste uneli e-mail u odgovarajućem formatu. </div>';
-				else if ($greska === 'korisnicko_ime_postoji')
-					echo '<div id="greska"> Korisničko ime koje ste uneli već postoji. </div>';
-				else if ($greska === 'e_mail_postoji')
-					echo '<div id="greska"> Unetu e-mail adresu već koristi neki drugi nalog. </div>';
-				else if ($greska === 'stmt_fail')
-					echo '<div id="greska"> Dogodila se serverska greška, probajte ponovo. </div>';
-				else if ($greska === 'ne_postoji')
-					echo '<div id="greska"> Korisničko ime ili e-mail koji ste uneli ne pripada ni jednom nalogu. </div>';
-				else if ($greska === 'pogresna_lozinka')
-					echo '<div id="greska"> Pogrešna lozinka. </div>';
-			}
-		?>
 	</body>
 </html>

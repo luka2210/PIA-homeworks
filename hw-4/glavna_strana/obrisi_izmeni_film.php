@@ -2,6 +2,7 @@
     <head>
         <title> IMDB </title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="admin.css">
     </head>
     
     <body>
@@ -33,7 +34,6 @@
                     izbrisi_film($conn, (int)$izabrani_film->id);
                 }
                 else if ($_POST['akcija'] === "izmeni") {
-                    echo $_POST['izabrani_film'];
                     $_SESSION['id_filma'] = $izabrani_film->id;
                 }
                 else {
@@ -62,19 +62,21 @@
             }
         ?>
 
+        <div id="osnovni_kontejner">
         <div id="izmeni_kontejner">
             <form action="izmeni_film.php" method="post">
-                <input type="text" name="naslov" placeholder="Naslov"> <br>
-                <input type="text" name="kraci_opis" placeholder="Kraći opis"> <br>
-                <input type="text" name="zanr" placeholder="Žanr"> <br>
-                <input type="text" name="reziser" placeholder="Režiser"> <br>     
-                <input type="text" name="prod_kuca" placeholder="Producentska kuća"> <br>
-                <input type="text" name="glumci" placeholder="Glumci"> <br>
-                <input type="text" name="god_izdanja" placeholder="Godina izdanja"> <br>
-                <input type="text" name="slika" placeholder="Slika"> <br>
-                <input type="text" name="vreme_trajanja" placeholder="Vreme trajanja (u minutima)"> <br>
-                <input type="submit" id="posalji" value="Potvrdi">
+                <input value="<?php echo $izabrani_film->naslov; ?>" class="textbox" type="text" name="naslov" placeholder="Naslov"> <br>
+                <input value="<?php echo $izabrani_film->kraci_opis; ?>" class="textbox" type="text" name="kraci_opis" placeholder="Kraći opis"> <br>
+                <input value="<?php echo implode(", ", $izabrani_film->zanr); ?>" class="textbox" type="text" name="zanr" placeholder="Žanr"> <br>
+                <input value="<?php echo $izabrani_film->reziser; ?>"class="textbox" type="text" name="reziser" placeholder="Režiser"> <br>     
+                <input value="<?php echo $izabrani_film->prod_kuca; ?>" class="textbox" type="text" name="prod_kuca" placeholder="Producentska kuća"> <br>
+                <input value="<?php echo $izabrani_film->glumci; ?>" class="textbox" type="text" name="glumci" placeholder="Glumci"> <br>
+                <input value="<?php echo $izabrani_film->god_izdanja; ?>" class="textbox" type="text" name="god_izdanja" placeholder="Godina izdanja"> <br>
+                <input value="<?php echo $izabrani_film->slika; ?>" class="textbox" type="text" name="slika" placeholder="Slika"> <br>
+                <input value="<?php echo $izabrani_film->vreme_trajanja; ?>" class="textbox" type="text" name="vreme_trajanja" placeholder="Vreme trajanja (u minutima)"> <br>
+                <input class="dugme2" type="submit" id="posalji" value="Potvrdi">
             </form>
+        </div>
         </div>
 
     </body>

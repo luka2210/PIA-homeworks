@@ -2,6 +2,7 @@
     <head> 
         <title> IMDB </title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="film_strana.css">
     </head>
 
     <body>
@@ -36,7 +37,9 @@
                 }
 
                 $_SESSION['film_id'] = $izabrani_film->id;
-                $prosecna_ocena = pronadji_prosecnu_ocenu($conn, $_SESSION['film_id']);
+                $niz = pronadji_prosecnu_ocenu($conn, $_SESSION['film_id']);
+                $prosecna_ocena = $niz[0];
+                $broj_ocena = $niz[1];
                 //echo $prosecna_ocena;
             }
             else {
@@ -63,23 +66,42 @@
                 }
                 if ($br === 0)
                     return "neocenjen";
-                return ($zbir/$br);
+                return array($zbir/$br, $br);
+                mysqli_stmt_close($stmt);
+            }
+
+            function pronadji_broj_ocena($conn, $film_id) {
+                $br=0;
+                $sql = "SELECT ocena FROM ocene WHERE film_id = ?;";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("location: login-registracija.php?error=stmt_fail");
+                    exit();
+                }
+                mysqli_stmt_bind_param($stmt, "i", $film_id);
+                mysqli_stmt_execute($stmt);
+                $podaci = mysqli_stmt_get_result($stmt);
+                while ($ocena = mysqli_fetch_assoc($podaci)) {
+                    $br++;
+                }
+                return $br;
                 mysqli_stmt_close($stmt);
             }
         ?>
 
-        <div id="slika"> <img src="<?php echo $izabrani_film->slika ?>"> </div>
-        <div id="naslov"> <?php echo $izabrani_film->naslov ?> </div>
-        <div id="kraci_opis"> <?php echo $izabrani_film->kraci_opis ?> </div>
-        <div id="zanr"> <?php echo implode(", ", $izabrani_film->zanr) ?> </div>
-        <div id="reziser"> <?php echo $izabrani_film->reziser ?> </div>
-        <div id="prod_kuca"> <?php echo $izabrani_film->prod_kuca ?> </div>
-        <div id="glumci"> <?php echo $izabrani_film->glumci ?> </div>
-        <div id="god_izdanja"> <?php echo $izabrani_film->god_izdanja ?> </div>
-        <div id="vreme_trajanja"> <?php echo $izabrani_film->vreme_trajanja ?> </div>
-        <div id="prosecna_ocena"> <?php echo $prosecna_ocena ?> </div>
+        <div class="bubble" id="slika"> <img src="<?php echo $izabrani_film->slika ?>"> </div>
+        <div class="bubble" id="naslov"> Naslov: <br> <?php echo $izabrani_film->naslov ?> </div>
+        <div class="bubble" id="kraci_opis"> Kratak opis: <br> <?php echo $izabrani_film->kraci_opis ?> </div>
+        <div class="bubble" id="zanr"> Žanr: <?php echo implode(", ", $izabrani_film->zanr) ?> </div>
+        <div class="bubble" id="reziser"> Režiser: <?php echo $izabrani_film->reziser ?> </div>
+        <div class="bubble" id="prod_kuca"> Producentska kuća: <?php echo $izabrani_film->prod_kuca ?> </div>
+        <div class="bubble" id="glumci"> Glumci: <br> <?php echo $izabrani_film->glumci ?> </div>
+        <div class="bubble" id="god_izdanja"> Godina izdanja: <?php echo $izabrani_film->god_izdanja ?> </div>
+        <div class="bubble" id="vreme_trajanja"> Vreme trajanja: <?php echo $izabrani_film->vreme_trajanja ?> minuta </div>
+        <div class="bubble" id="prosecna_ocena"> Prosečna ocena: <?php echo $prosecna_ocena ?> </div>
+        <div class="bubble" id="broj_ocena"> Broj ocena: <?php echo $broj_ocena ?> </div>
 
-        <div id="oceni_kontejner">
+        <div class="bubble" id="oceni_kontejner">
             <form action="oceni.php" method="post">
                 <input type="range" id="ocena" name="ocena" min="1" max="10"> 
                 <input type="submit" value="Oceni">

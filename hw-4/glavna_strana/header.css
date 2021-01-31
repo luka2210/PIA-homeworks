@@ -1,0 +1,21 @@
+#header {
+    background-color: black;
+}
+
+.header_forma {
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+#header_forma2 {
+    float: right;
+}
+
+.header_dugme {
+    background-color:black;
+    height: 50px;
+    width: 300px;
+    color:white;
+    font-size: 20px;
+}
