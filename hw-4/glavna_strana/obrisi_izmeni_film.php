@@ -5,7 +5,7 @@
     </head>
     
     <body>
-
+        <?php require_once "header.php" ?>  
         <?php
             require_once "../pocetna_strana/dbh.php";
             require_once "film_klasa.php";

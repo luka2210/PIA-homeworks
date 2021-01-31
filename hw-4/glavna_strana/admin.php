@@ -5,6 +5,7 @@
 	</head>
 
     <body>
+    <?php require_once "header.php" ?>    
     <input type="button" id="dodaj_dugme" value="Dodaj film">
     <input type="button" id="obrisi_izmeni_dugme" value="Izmeni/obriši film">
 

@@ -5,6 +5,7 @@
     </head>
 
     <body>
+        <?php require_once "header.php" ?>  
         <?php
             require_once "film_klasa.php";
             require_once "../pocetna_strana/dbh.php";
@@ -66,12 +67,6 @@
                 mysqli_stmt_close($stmt);
             }
         ?>
-
-        <div id="nazad">
-            <form method="post" action="korisnik.php">
-                <input type="submit" value="Nazad">
-            </form>
-        </div>
 
         <div id="slika"> <img src="<?php echo $izabrani_film->slika ?>"> </div>
         <div id="naslov"> <?php echo $izabrani_film->naslov ?> </div>
