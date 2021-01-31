@@ -103,8 +103,8 @@
 
         <div class="bubble" id="oceni_kontejner">
             <form action="oceni.php" method="post">
-                <input type="range" id="ocena" name="ocena" min="1" max="10"> 
-                <input type="submit" value="Oceni">
+                <input id="range" type="range" id="ocena" name="ocena" min="1" max="10"> <br> 
+                <input class="dugme2" type="submit" value="Oceni">
             </form>
         </div>
     </body>

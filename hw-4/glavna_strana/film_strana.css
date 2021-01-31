@@ -15,3 +15,18 @@ body {
     padding: 10px;
     border-radius: 15px;
 }
+
+.dugme2 {
+    height: 50px;
+    width: 605px;
+    font-size: 20pt;
+    color: white;
+    margin-top: 20px;
+    background-color: rgb(0, 153, 76);
+    font-weight: bold;
+}
+
+#range {
+    width: 605px;
+    height: 30px;
+}
