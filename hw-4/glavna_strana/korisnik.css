@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#osnovni_kontejner {
+    margin: auto;
+    margin-top: 200px;
+    width: 70%;
+    background-color: rgb(0, 25, 51);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dugme1 {
+    height: 50px;
+    width: 300px;
+    font-size: 20pt;
+    color: white;
+    background-color: rgb(128, 128, 128);
+    border: none;
+}
+
+#dugme1_kontejner {
+    margin-bottom: 20px;
+}
+
+.textbox {
+    width: 605px;
+    font-size: 18pt;
+}
+
+.dugme2 {
+    height: 50px;
+    width: 605px;
+    font-size: 20pt;
+    color: white;
+    margin-top: 20px;
+    background-color: rgb(0, 153, 76);
+    font-weight: bold;
+}

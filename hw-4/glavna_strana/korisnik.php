@@ -1,17 +1,24 @@
 <html>
     <head>
-    <title> IMDB </title>
-		<meta charset="UTF-8">
+        <title> IMDB </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="korisnik.css">
 	</head>
 
     <body>
     <?php require_once "header.php" ?>  
-    <input type="button" id="svi_filmovi_dugme" value="Svi filmovi"> 
-    <input type="button" id="zanrovi_dugme" value="Izaberi žanr">
+    
+    <div id="osnovni_kontejner">
+    
+    <div id="dugme1_kontejner">
+    <input type="button" class="dugme1" id="svi_filmovi_dugme" value="Svi filmovi"> 
+    <input type="button" class="dugme1" id="zanrovi_dugme" value="Izaberi žanr"> <br>
+    </div>  
+
+
 
     <div id="svi_filmovi_kontejner">
         <form action="film_strana.php" method="post">
-            <label for="svi_filmovi_lista"> Izaberite film iz liste svih filmova: </label>
             <input list="filmovi" name="izabrani_film" id="svi_filmovi_lista">
             <input type="submit" value="Potvrdi"> <br>
         </form>
@@ -72,10 +79,10 @@
         </div>
 
         <div id="komedija">
-            <form action="film_strana.php" method="post">
-                <input list="filmovi_komedija" name="izabrani_film" id="komedija_filmovi_lista">
-                <input type="submit" value="Potvrdi">
-            </form>
+        <form action="film_strana.php" method="post">
+        <input list="filmovi_komedija" name="izabrani_film" id="komedija_filmovi_lista">
+        <input type="submit" value="Potvrdi">
+        </form>
         </div>
 
         <div id="triler">
@@ -85,7 +92,7 @@
             </form>
         </div>
     </div>
-
+    </div>
 
     <?php 
         session_start();
