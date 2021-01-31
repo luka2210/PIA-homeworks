@@ -1,14 +1,16 @@
 <?php
     session_start();
     if (isset($_SESSION['id'])) {
-        $id = $_SESSION['id'];
+        $id = $_SESSION['id'];        
         require_once "../pocetna_strana/dbh.php";
 
         if (vrsta_korisnika($conn, $id) === 0) {
+            $_SESSION['admin'] = 0;
             header('location: korisnik.php');
             exit();
         }
         else if (vrsta_korisnika($conn, $id) === 1) {
+            $_SESSION['admin'] = 1;
             header('location: admin.php');
             exit();
         }

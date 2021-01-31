@@ -37,6 +37,10 @@
     <?php 
         session_start();
         if (isset($_SESSION['id'])) {
+            if ($_SESSION['admin'] === 0) {
+                header("location: korisnik.php");
+                exit();
+            }
             //echo $_SESSION['id'];
             require_once "../pocetna_strana/dbh.php";
             require_once "film_klasa.php";
